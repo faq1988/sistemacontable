@@ -7,7 +7,9 @@ class Welcome extends Main_Controller {
 	public function index()
 	{
 		$this -> default_vars();
-		$this->load->view('fixed');
+		$this->load->view('menu');
+		$this->load->view('portal');
+		$this->load->view('footer');
 	}
 
 	
