@@ -13,11 +13,12 @@ class Main_Controller extends CI_Controller {
 		  array_push($css,base_url().'css/AdminLTE.min.css');
 		  array_push($css,base_url().'css/skins/_all-skins.min.css');
 
-		  array_push($js,base_url().'js/jquery.min.js');
-		  array_push($js,base_url().'js/bootstrap.min.js');
+		  array_push($js,base_url().'js/plugins/jquery.min.js');
+		  array_push($js,base_url().'js/plugins/bootstrap.min.js');
 		  array_push($js,base_url().'js/plugins/adminlte.min.js');
 		  array_push($js,base_url().'js/plugins/jquery.slimscroll.min.js');
 		  array_push($js,base_url().'js/plugins/fastclick.js');
+		  array_push($js,base_url().'js/plugins/Tree.js');
   
 		  $data=array();
 		  $data["js_to_load"]=array_unique($js);
