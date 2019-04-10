@@ -2,14 +2,13 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 require_once(APPPATH .'controllers/main_controller.php');
 
-class Welcome extends Main_Controller {
+class Login extends Main_Controller {
 
 	public function index()
 	{
-		$this -> default_vars();
-		$this->load->view('fixed');
+		$this -> default_vars(array('js/sb-admin-2.min.js'));
+		$this->load->view('login');
 	}
-
 	
   }
 
