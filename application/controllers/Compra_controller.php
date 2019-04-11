@@ -2,13 +2,13 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 require_once(APPPATH .'controllers/Main_controller.php');
 
-class Welcome extends Main_Controller {
+class Compra_controller extends Main_Controller {
 
 	public function index()
 	{
-		$this -> default_vars();
+		$this -> default_vars(array('js/compra.js'));
 		$this->load->view('menu');
-		$this->load->view('portal');
+		$this->load->view('compra');
 		$this->load->view('footer');
 	}
 

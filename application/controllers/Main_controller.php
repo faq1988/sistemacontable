@@ -19,6 +19,7 @@ class Main_Controller extends CI_Controller {
 		  array_push($js,base_url().'js/plugins/jquery.slimscroll.min.js');
 		  array_push($js,base_url().'js/plugins/fastclick.js');
 		  array_push($js,base_url().'js/plugins/Tree.js');
+		  array_push($js,base_url().'js/menu.js');
   
 		  $data=array();
 		  $data["js_to_load"]=array_unique($js);

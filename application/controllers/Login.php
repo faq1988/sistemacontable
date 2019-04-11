@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-require_once(APPPATH .'controllers/main_controller.php');
+require_once(APPPATH .'controllers/Main_controller.php');
 
 class Login extends Main_Controller {
 
