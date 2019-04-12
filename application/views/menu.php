@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+
+<script>
+  var active_classes=<?php echo '["' . implode('", "', $active_classes) . '"]' ?>;
+</script>
 <html>
 <head>
   <meta charset="utf-8">
@@ -207,8 +210,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a><i class="fa fa-circle-o l1_portal1"></i> Portal v1</a></li>
-            <li><a><i class="fa fa-circle-o l1_portal2"></i> Portal v2</a></li>
+            <li class="l1_portal1"><a><i class="fa fa-circle-o l1_portal1"></i> Portal v1</a></li>
+            <li class="l1_portal2"><a><i class="fa fa-circle-o l1_portal2"></i> Portal v2</a></li>
           </ul>
         </li>
         <li class="treeview t_compra_venta"  >
@@ -219,8 +222,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a class="l1_compra"><i class="fa fa-circle-o"></i> Compra</a></li>
-            <li><a class="l1_venta"><i class="fa fa-circle-o l1_venta"></i> Venta</a></li>
+            <li class="l1_compra"><a ><i class="fa fa-circle-o"></i> Compra</a></li>
+            <li class="l1_venta"><a ><i class="fa fa-circle-o"></i> Venta</a></li>
           </ul>
         </li>
       </ul>

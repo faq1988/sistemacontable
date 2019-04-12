@@ -12,7 +12,8 @@ class Compra_controller extends Main_Controller {
 
 
 		$this -> default_vars(array('js/compra.js'));
-		$this->load->view('menu');
+		$data = array('active_classes' => array('t_compra_venta','l1_compra'));
+		$this->load->view('menu',$data);
 		$this->load->view('compra');
 		$this->load->view('footer');
 	}
