@@ -4,8 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Main_Controller extends CI_Controller {
 
 	protected function default_vars($js_array=array(),$css_array=array()){
-	  $js=(is_array($js_array) && count($js_array)) ? $js_array: array( );
-	  $css=(is_array($css_array) && count($css_array)) ? $css_array: array( );
+	  $js=array();
+	  $css=array();
   
 		  array_push($css,base_url().'css/bootstrap/dist/css/bootstrap.min.css');
 		  array_push($css,base_url().'css/font-awesome/css/font-awesome.min.css');
@@ -21,6 +21,8 @@ class Main_Controller extends CI_Controller {
 		  array_push($js,base_url().'js/plugins/Tree.js');
 		  array_push($js,base_url().'js/menu.js');
   
+		$js=array_merge($js,(is_array($js_array) && count($js_array)) ? $js_array: array( ));
+		$css=array_merge($css,(is_array($css_array) && count($css_array)) ? $css_array: array( ));
 		  $data=array();
 		  $data["js_to_load"]=array_unique($js);
 	  $data["css_to_load"]=array_unique($css);

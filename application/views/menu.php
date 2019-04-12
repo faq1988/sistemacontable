@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+
+<script>
+  var active_classes=<?php echo '["' . implode('", "', $active_classes) . '"]' ?>;
+</script>
 <html>
 <head>
   <meta charset="utf-8">
