@@ -6,6 +6,11 @@ class Compra_controller extends Main_Controller {
 
 	public function index()
 	{
+		$this->load->model('test_model');
+		$fila= $this->test_model->obtener_tabla()->row(); 
+		var_dump($fila);exit;
+
+
 		$this -> default_vars(array('js/compra.js'));
 		$this->load->view('menu');
 		$this->load->view('compra');
