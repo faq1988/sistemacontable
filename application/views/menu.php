@@ -1,6 +1,6 @@
 
 <script>
-  var active_classes=<?php echo '["' . implode('", "', $active_classes) . '"]' ?>;
+  var active_classes=<?php echo (isset($active_classes) && count($active_classes)) ? '["' . implode('", "', $active_classes) . '"]' :'[]'?>;
 </script>
 <html>
 <head>
