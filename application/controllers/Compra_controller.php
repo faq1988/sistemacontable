@@ -8,7 +8,7 @@ class Compra_controller extends Main_Controller {
 	{
 		$this->load->model('test_model');
 		$fila= $this->test_model->obtener_tabla()->row(); 
-		var_dump($fila);exit;
+		log_message('error',JSON_ENCODE($fila));
 
 
 		$this -> default_vars(array('js/compra.js'));
