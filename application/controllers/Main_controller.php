@@ -8,7 +8,10 @@ class Main_Controller extends CI_Controller {
 	  $css=array();
   
 		  array_push($css,base_url().'css/bootstrap/dist/css/bootstrap.min.css');
-		  array_push($css,base_url().'css/fontawesome-free/css/fontawesome.min.css');
+			//array_push($css,base_url().'css/fontawesome-free/css/fontawesome.min.css');
+			array_push($css,'https://use.fontawesome.com/releases/v5.8.1/css/all.css');
+			
+			
 		  array_push($css,base_url().'css/Ionicons/css/ionicons.min.css');
 		  array_push($css,base_url().'css/AdminLTE.min.css');
 		  array_push($css,base_url().'css/skins/_all-skins.min.css');
