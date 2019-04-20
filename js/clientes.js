@@ -15,7 +15,7 @@ function sendForm(id) {
     $.ajax({
      type: 'POST',
      url: base_url()+"/sistemacontable/clientes_controller/crear_cliente",
-     data: $(id).serialize();,
+     data: $(id).serialize(),
      success: function(data, textStatus, request) {
         if(data.success==false){
             //seteo los errores en el formlario
