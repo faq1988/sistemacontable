@@ -2,6 +2,7 @@ function base_url(){
     return  window.location.origin;
 }
 
+//inserta campos de error en cada elemento designado en el arreglo de error 
 function set_form_errors(form,errors){
     $('.form-error').remove();
     for (const key in errors) {

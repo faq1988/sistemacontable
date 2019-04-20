@@ -29,8 +29,6 @@ class Clientes_controller extends Main_Controller {
     $this->form_validation->set_rules('cuit', 'Cuit / Cuil', 'required');
     $this->form_validation->set_rules('domicilio', 'Domicilio', 'required');
     $this->form_validation->set_rules('altura', 'Altura', 'required|numeric|greater_than[0]');
-    //$this->form_validation->set_rules('piso', 'Piso', 'required');
-    //$this->form_validation->set_rules('departamento', 'Departamento', 'required');
     $this->form_validation->set_rules('localidad', 'Localidad', 'required');
     $this->form_validation->set_rules('telefono', 'Teléfono', 'required');
     $this->form_validation->set_rules('email', 'Correo electrónico', 'required');
@@ -38,11 +36,22 @@ class Clientes_controller extends Main_Controller {
     
     if ($this->form_validation->run() == FALSE)      
       {  
-        echo JSON_ENCODE(array('success' => FALSE,'response' => $this -> serialize_form_error(array('razon_social','categoria_iva','tipo_documento','cuit','domicilio','altura','piso','departamento','localidad','telefono','email'))));
+        echo JSON_ENCODE(array( 'success' => FALSE,
+                                'response' => $this -> serialize_form_error(
+                                      array('razon_social',
+                                            'categoria_iva',
+                                            'tipo_documento',
+                                            'cuit',
+                                            'domicilio',
+                                            'altura',
+                                            'localidad',
+                                            'telefono',
+                                            'email'))));
         exit;
       } 
       else{
         $this->load->model('clientes_model');
+        //genera variables por cada valor enviado por post
         extract($this -> input -> post(),EXTR_OVERWRITE);
         $this->clientes_model->crear_cliente(compact('razon_social','categoria_iva','tipo_documento','cuit','domicilio','altura','piso','departamento','localidad','telefono','email'));
         redirect("Clientes_controller");

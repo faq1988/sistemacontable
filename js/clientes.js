@@ -12,15 +12,14 @@ function bindEvents(){
 
 
 function sendForm(id) {
-    let data_send=$(id).serialize();
     $.ajax({
      type: 'POST',
      url: base_url()+"/sistemacontable/clientes_controller/crear_cliente",
-     data: data_send,
+     data: $(id).serialize();,
      success: function(data, textStatus, request) {
         if(data.success==false){
             //seteo los errores en el formlario
-            set_form_errors('.form-cliente',data.response);
+            set_form_errors(id,data.response);
         }
         else{
             alert('ok!!');
