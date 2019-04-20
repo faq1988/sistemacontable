@@ -5,16 +5,13 @@ $(document).ready(function() {
 
 function bindEvents(){
     $(".l1_compra").off().on('click',function(e){
-        let base_url = window.location.origin;
-        window.location.href=base_url+"/sistemacontable/compra_controller";
+        window.location.href=base_url()+"/sistemacontable/compra_controller";
     });
     $(".l1_venta").off().on('click',function(e){
-        let base_url = window.location.origin;
-        window.location.href=base_url+"/sistemacontable/venta_controller";
+        window.location.href=base_url()+"/sistemacontable/venta_controller";
     });
     $(".l1_clientes").off().on('click',function(e){
-        let base_url = window.location.origin;
-        window.location.href=base_url+"/sistemacontable/clientes_controller";
+        window.location.href=base_url()+"/sistemacontable/clientes_controller";
     });
 }
 

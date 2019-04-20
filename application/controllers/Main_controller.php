@@ -22,7 +22,8 @@ class Main_Controller extends CI_Controller {
 		  array_push($js,base_url().'js/plugins/jquery.slimscroll.min.js');
 		  array_push($js,base_url().'js/plugins/fastclick.js');
 		  array_push($js,base_url().'js/plugins/Tree.js');
-		  array_push($js,base_url().'js/menu.js');
+			array_push($js,base_url().'js/menu.js');
+			array_push($js,base_url().'js/utils.js');
   
 		$js=array_merge($js,(is_array($js_array) && count($js_array)) ? $js_array: array( ));
 		$css=array_merge($css,(is_array($css_array) && count($css_array)) ? $css_array: array( ));
