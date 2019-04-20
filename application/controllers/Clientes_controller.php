@@ -6,10 +6,11 @@ class Clientes_controller extends Main_Controller {
 
 	public function index()
 	{
-		//$this->load->model('test_model');
-		//$fila= $this->test_model->obtener_tabla()->row(); 
-		//log_message('error',JSON_ENCODE($fila));
-
+		
+        if (!$this->session->userdata('username'))
+	  {
+		redirect('login');
+	  }
 
 		$this -> default_vars(array('js/clientes.js'));
 		$data = array('active_classes' => array('t_abm','l1_clientes'));
