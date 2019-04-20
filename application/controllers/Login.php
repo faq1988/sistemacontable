@@ -29,8 +29,7 @@ class Login extends Main_Controller {
 			  }
 			  else
 			  {
-				$this->session->set_flashdata('error', 'Usuario o contraseña incorrectos');
-				
+				$this->session->set_flashdata('error', 'Usuario o contraseña incorrectos');				
 				redirect('login'); 
 			  }       
 	

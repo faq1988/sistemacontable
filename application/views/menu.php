@@ -203,6 +203,19 @@
             <li class="l1_venta"><a ><i class="fa fa-circle-o"></i> Venta</a></li>
           </ul>
         </li>
+
+        <li class="treeview t_abm"  >
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>ABM</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="l1_clientes"><a ><i class="fa fa-circle-o"></i> Clientes</a></li>
+            <li class="l1_comprobantes"><a ><i class="fa fa-circle-o"></i> Comprobantes</a></li>
+          </ul>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->

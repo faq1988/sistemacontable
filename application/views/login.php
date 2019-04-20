@@ -24,6 +24,17 @@
 
   <div class="container">
 
+  <?php if ($this->session->flashdata('error')) {?>
+              <div class="alert alert-danger">                                
+                <?php echo $this->session->flashdata('error');?>
+              </div>
+          <?php } ?>    
+          <?php if ($this->session->flashdata('success')) {?>
+              <div class="alert alert-success">                               
+                <?php echo $this->session->flashdata('success');?>
+              </div>
+          <?php } ?>  
+
     <!-- Outer Row -->
     <div class="row justify-content-center">
 
@@ -35,9 +46,10 @@
             <div class="row">
               <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
               <div class="col-lg-6">
-                <div class="p-5">
+              
+              <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                    <h1 class="h4 text-gray-900 mb-4">Bienvenidos</h1>
                   </div>
                   <!--form class="user"-->
                   <?php echo form_open('Login'); ?>

@@ -12,6 +12,10 @@ function bindEvents(){
         let base_url = window.location.origin;
         window.location.href=base_url+"/sistemacontable/venta_controller";
     });
+    $(".l1_clientes").off().on('click',function(e){
+        let base_url = window.location.origin;
+        window.location.href=base_url+"/sistemacontable/clientes_controller";
+    });
 }
 
 function setActiveClasses(){
