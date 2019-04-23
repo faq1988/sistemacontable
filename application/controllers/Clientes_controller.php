@@ -55,7 +55,7 @@ class Clientes_controller extends Main_Controller {
         extract($this -> input -> post(),EXTR_OVERWRITE);
         $res = $this->clientes_model->crear_cliente(compact('razon_social','categoria_iva','tipo_documento','cuit','domicilio','altura','piso','departamento','localidad','telefono','email'));
         $res=TRUE;
-        echo JSON_ENCODE(array( 'success' => FALSE,
+        echo JSON_ENCODE(array( 'success' => TRUE,
                                 'response' =>$res ));
       }
 

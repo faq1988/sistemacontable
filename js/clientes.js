@@ -23,6 +23,7 @@ function sendForm(id) {
         }
         else{
             alert('ok!!');
+            clear_form(id);
         }
     },
      error: function(request, textStatus, error) {

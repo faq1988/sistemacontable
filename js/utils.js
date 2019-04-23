@@ -10,3 +10,8 @@ function set_form_errors(form,errors){
         $(form).find(`[name=${key}]`).parent().append(`<span class='form-error' style="color:red">${element}</span>`);
     }
 }
+
+function clear_form(form){
+    $(form).find('input').val('');
+    $(form).find('select').prop("selectedIndex", 0);
+}
