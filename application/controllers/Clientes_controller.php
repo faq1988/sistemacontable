@@ -1,3 +1,4 @@
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 require_once(APPPATH .'controllers/Main_controller.php');
@@ -12,11 +13,11 @@ class Clientes_controller extends Main_Controller {
 		redirect('login');
 	  }
 
-		$this -> default_vars(array('js/clientes.js'));
+		$this -> default_vars(array(base_url().'js/clientes.js'));
 		$data = array('active_classes' => array('t_abm','l1_clientes'));
 		$this->load->view('menu',$data);
 		$this->load->view('clientes');
-		$this->load->view('footer');
+    $this->load->view('footer');
     }
     
 

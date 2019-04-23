@@ -27,11 +27,11 @@ class Main_Controller extends CI_Controller {
   
 		$js=array_merge($js,(is_array($js_array) && count($js_array)) ? $js_array: array( ));
 		$css=array_merge($css,(is_array($css_array) && count($css_array)) ? $css_array: array( ));
-		  $data=array();
-		  $data["js_to_load"]=array_unique($js);
+		$data=array();
+		$data["js_to_load"]=array_unique($js);
 	  $data["css_to_load"]=array_unique($css);
 	  if($this->load->view('init_view','',TRUE)!== '')
-		$this -> load -> view('init_view',$data);
+			$this -> load -> view('init_view',$data);
   
 	  }
   }

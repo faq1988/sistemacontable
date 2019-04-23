@@ -1,16 +1,16 @@
 $(document).ready(function() {
     setActiveClasses();
-    bindEvents();
+    bindMenuEvents();
 });
 
-function bindEvents(){
-    $(".l1_compra").off().on('click',function(e){
+function bindMenuEvents(){
+    $(document).find(".l1_compra").off().on('click',function(e){
         window.location.href=base_url()+"/sistemacontable/compra_controller";
     });
-    $(".l1_venta").off().on('click',function(e){
+    $(document).find(".l1_venta").off().on('click',function(e){
         window.location.href=base_url()+"/sistemacontable/venta_controller";
     });
-    $(".l1_clientes").off().on('click',function(e){
+    $(document).find(".l1_clientes").off().on('click',function(e){
         window.location.href=base_url()+"/sistemacontable/clientes_controller";
     });
 }
