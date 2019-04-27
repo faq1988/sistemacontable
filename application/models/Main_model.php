@@ -116,11 +116,7 @@ class Main_model extends CI_Model{
                 $database -> trans_complete();
 
         }catch(PDOException $e){
-            // Si está en transacción marcamos el estado en false
             if($database->_trans_depth>0){
-                // Este fix es necesario pq la función simple_query no usa la implementación query() del driver,
-                // sino la función _execute(), la cual No controla el estado de la transacción, solo genera
-                // la excepción propagada por el método nativo de la librería utilizada (en nuestro caso: pdo).
                 $database -> _trans_status = FALSE;
             }
 
@@ -134,16 +130,6 @@ class Main_model extends CI_Model{
             if(ENVIRONMENT != 'production'){
                 $result["msg"] = $e -> getMessage();
             } else {
-                $mailmsg = date("d-m-Y H:i:s") . " " . $this -> usuario -> getLogin() . "@" . $_SERVER['REMOTE_ADDR'] . "\n";
-                $mailmsg.= $_SERVER['REQUEST_URI'] . "\n\n";
-                $mailmsg.= $e -> getMessage() . "\n\n\n" . var_export($query_str, true);
-                $this -> send_mail("arojas@cooperativaobrera.coop", "ERROR PORTAL", $mailmsg, "noreply@cooperativaobrera.coop");
-                if(strpos($_SERVER['REQUEST_URI'], "/cerberus2/") !== FALSE){
-                    $this -> send_mail("posdevel@cooperativaobrera.coop", "ERROR CERBERUS2", $mailmsg, "noreply@cooperativaobrera.coop");
-                }
-                if(strpos($_SERVER['REQUEST_URI'], "/supermercados/ner_") !== FALSE){
-                    $this -> send_mail("fdedios@cooperativaobrera.coop,msarli@cooperativaobrera.coop", "ERROR NER", $mailmsg, "noreply@cooperativaobrera.coop");
-                }
                 $result["msg"] = "Error en la Base de Datos.<br/>(Err. " . $e -> getCode() . " - " . date("Y-m-d H:i:s") . ")";
             }
             $result['error_code'] = $e -> getCode();
