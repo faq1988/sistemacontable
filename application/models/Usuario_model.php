@@ -1,25 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+require_once(APPPATH .'models/Main_model.php');
 
-class Usuario_model extends CI_Model{
-
-
+class Usuario_model extends Main_model{
 
 public function __construct()
 {
-  parent::__construct();
+	parent::__construct();
 }
 
 
 public function login($username, $password){
-
-$this->db->where('username', $username);
-$this->db->where('password', $password);
-$q = $this->db->get('usuario');
-if ($q->num_rows()>0)
-	return true;
-else
-	return false;
+	$qry=" SELECT 1 FROM usuario WHERE username='{$username}' AND password='{$password}';";
+	return $this -> query($qry,$this -> db,'bool');
+	
 }
 
 

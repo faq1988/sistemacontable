@@ -1,10 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+require_once(APPPATH .'models/Main_model.php');
 
-class Clientes_model extends CI_Model{
-
-
-
+class Clientes_model extends Main_model{
 public function __construct()
 {
   parent::__construct();
@@ -12,20 +10,20 @@ public function __construct()
 
 
 function crear_cliente($data){
-		
-    $this->db->insert('cliente', 
-        array(	'razon_social'=>$data['razon_social'], 
-                'categoria_iva'=>$data['categoria_iva'], 
-                'tipo_documento'=>$data['tipo_documento'], 
-                'cuit'=>$data['cuit'], 
-                'domicilio'=>$data['domicilio'],                 
-                'altura'=>$data['altura'], 
-                'piso'=>$data['piso'], 
-                'depto'=>$data['departamento'], 
-                'localidad'=>$data['localidad'],                 
-                'telefono'=>$data['telefono'], 
-                'email'=>$data['email']
-                ));
+    $qry="INSERT INTO cliente VALUES( 
+                {$data['razon_social']}, 
+                '{$data['categoria_iva']}', 
+                '{$data['tipo_documento']}', 
+                {$data['cuit']}, 
+                '{$data['domicilio']}',                 
+                '{$data['altura']}', 
+                {$data['piso']}, 
+                '{$data['departamento']}', 
+                '{$data['localidad']}',                 
+                '{$data['telefono']}', 
+                '{$data['email']}'
+                );";
+    return $this -> query($qry,$this -> db,'simple',array('manage_exception'=>TRUE));
 }
 
 

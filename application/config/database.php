@@ -76,12 +76,12 @@ $devel = false;
 
 if($devel){
 	$db['default'] = array(
-		'dsn'	=> '',
+		'dsn'	=> 'mysql:host=127.0.0.1',
 		'hostname' => '127.0.0.1',
 		'username' => 'root',
 		'password' => '',
 		'database' => 'abtmorga_sistemacontable',
-		'dbdriver' => 'mysqli',
+		'dbdriver' => 'pdo',
 		'dbprefix' => '',
 		'pconnect' => FALSE,
 		'db_debug' => (ENVIRONMENT !== 'production'),
@@ -99,12 +99,12 @@ if($devel){
 }
 else{
 		$db['default'] = array(
-			'dsn'	=> '',
+			'dsn'	=> 'mysql:host=abtm.org.ar;dbname=abtmorga_sistemacontable',
 			'hostname' => 'abtm.org.ar',
 			'username' => 'abtmorga_conta',
 			'password' => 'sistemacontable',
 			'database' => 'abtmorga_sistemacontable',
-			'dbdriver' => 'mysqli',
+			'dbdriver' => 'pdo',
 			'dbprefix' => '',
 			'pconnect' => FALSE,
 			'db_debug' => (ENVIRONMENT !== 'production'),

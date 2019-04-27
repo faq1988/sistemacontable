@@ -1,9 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+require_once(APPPATH .'models/Main_model.php');
 
-class Test_model extends CI_Model{
-
-
+class Test_model extends Main_model{
 
 public function __construct()
 {

@@ -55,9 +55,8 @@ class Clientes_controller extends Main_Controller {
         //genera variables por cada valor enviado por post
         extract($this -> input -> post(),EXTR_OVERWRITE);
         $res = $this->clientes_model->crear_cliente(compact('razon_social','categoria_iva','tipo_documento','cuit','domicilio','altura','piso','departamento','localidad','telefono','email'));
-        $res=TRUE;
-        echo JSON_ENCODE(array( 'success' => TRUE,
-                                'response' =>$res ));
+        echo JSON_ENCODE($res);
+        exit;
       }
 
   }
