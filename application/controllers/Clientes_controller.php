@@ -68,6 +68,15 @@ class Clientes_controller extends Main_Controller {
     }
     return $errors;
   }
+
+  public function load_cliente(){
+    $this->load->model('clientes_model');
+    //genera variables por cada valor enviado por post
+    // extract($this -> input -> post(),EXTR_OVERWRITE);
+    $res = $this->clientes_model->load_cliente();
+    echo JSON_ENCODE($res);
+    exit;
+  }
 	
   }
 

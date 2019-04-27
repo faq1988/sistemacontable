@@ -26,7 +26,13 @@ function crear_cliente($data){
     return $this -> query($qry,$this -> db,'simple',array('manage_exception'=>TRUE));
 }
 
-
+public function load_cliente($filter_array = array()){
+  $filter = '';//definir utilizandoel arreglo de filtros a posterior
+  $qry="SELECT * 
+        FROM cliente
+        WHERE  1=1 {$filter}";
+  return $this -> query($qry,$this -> db,'array',array('manage_exception'=>TRUE));
+}
 
 public function obtener_cliente($id){
 

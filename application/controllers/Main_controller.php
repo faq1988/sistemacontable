@@ -21,7 +21,8 @@ class Main_Controller extends CI_Controller {
 		  array_push($js,base_url().'js/plugins/adminlte.min.js');
 		  array_push($js,base_url().'js/plugins/jquery.slimscroll.min.js');
 		  array_push($js,base_url().'js/plugins/fastclick.js');
-		  array_push($js,base_url().'js/plugins/Tree.js');
+			array_push($js,base_url().'js/plugins/Tree.js');
+			array_push($js,base_url().'js/plugins/datatables.net/DataTables-1.10.18/js/jquery.dataTables.js');
 			array_push($js,base_url().'js/menu.js');
 			array_push($js,base_url().'js/utils.js');
   
