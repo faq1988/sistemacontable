@@ -21,17 +21,29 @@ function crear_cliente($data){
                 '{$data['departamento']}', 
                 '{$data['localidad']}',                 
                 '{$data['telefono']}', 
-                '{$data['email']}'
+                '{$data['email']}',
+                0,
+                0,
+                sysdate()
                 );";
     return $this -> query($qry,$this -> db,'simple',array('manage_exception'=>TRUE));
 }
 
 public function load_cliente($filter_array = array()){
-  $filter = '';//definir utilizandoel arreglo de filtros a posterior
+  $filter = '';
+  $filter .= (isset($filter_array['st'])) ? " AND st={$filter_array['st']} ": ' ';
   $qry="SELECT * 
         FROM cliente
         WHERE  1=1 {$filter}";
   return $this -> query($qry,$this -> db,'array',array('manage_exception'=>TRUE));
+}
+
+//baja logica
+public function delete_cliente($id){
+  $qry="UPDATE cliente
+        set st=1
+        WHERE id={$id}";
+  return $this -> query($qry,$this -> db,'simple',array('manage_exception'=>TRUE));
 }
 
 public function obtener_cliente($id){

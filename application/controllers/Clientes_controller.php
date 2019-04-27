@@ -72,8 +72,17 @@ class Clientes_controller extends Main_Controller {
   public function load_cliente(){
     $this->load->model('clientes_model');
     //genera variables por cada valor enviado por post
-    // extract($this -> input -> post(),EXTR_OVERWRITE);
-    $res = $this->clientes_model->load_cliente();
+    extract($this -> input -> post(),EXTR_OVERWRITE);
+    $res = $this->clientes_model->load_cliente(compact('st'));
+    echo JSON_ENCODE($res);
+    exit;
+  }
+
+  public function delete_cliente(){
+    $this->load->model('clientes_model');
+    //genera variables por cada valor enviado por post
+    extract($this -> input -> post(),EXTR_OVERWRITE);
+    $res = $this->clientes_model->delete_cliente($id);
     echo JSON_ENCODE($res);
     exit;
   }
