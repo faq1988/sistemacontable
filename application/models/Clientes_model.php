@@ -10,8 +10,10 @@ public function __construct()
 
 
 function crear_cliente($data){
-    $qry="INSERT INTO cliente VALUES( 
-                {$data['razon_social']}, 
+    $id=(isset($data['id'])) ? $data['id']:0;
+    $qry="REPLACE INTO cliente VALUES( 
+                {$id},
+                '{$data['razon_social']}', 
                 '{$data['categoria_iva']}', 
                 '{$data['tipo_documento']}', 
                 {$data['cuit']}, 
@@ -26,6 +28,7 @@ function crear_cliente($data){
                 0,
                 sysdate()
                 );";
+              var_dump($qry);exit;
     return $this -> query($qry,$this -> db,'simple',array('manage_exception'=>TRUE));
 }
 

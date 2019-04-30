@@ -1,3 +1,6 @@
+
+var clientes = [];
+
 $(document).ready(function () {
     bindEvents();
     loadClientes();
@@ -18,7 +21,12 @@ function loadClientes() {
             "url": base_url() + "/sistemacontable/clientes_controller/load_cliente",
             "type": "post",
             "data": { 'st': 0 },
-            "dataSrc": 'result',
+            "dataSrc": function (json) {
+                json.result.forEach(e => {
+                    clientes[e.id] = e;
+                });
+                return json.result;
+            },
         },
         "stateSave": false, // guarda el estado en el local storage (orden, pagina)
         "processing": true,
@@ -37,11 +45,16 @@ function loadClientes() {
                 data: "razon_social",
                 sortable: true,
             },
-            { title: "Categoria IVA", data: "categoria_iva" },
+            {
+                title: "Categoria IVA",
+                render: function (d, t, f) {
+                    return map_field('categoria_iva', f.categoria_iva);
+                }
+            },
             {
                 title: "Documento", data: "val_select", sortable: true,
                 render: function (d, t, f) {
-                    return f.tipo_documento + ' - ' + f.cuit;
+                    return map_field('tipo_documento', f.tipo_documento) + ' - ' + f.cuit;
                 }
             },
             {
@@ -61,7 +74,10 @@ function loadClientes() {
             {
                 title: "",
                 render: function (d, t, f) {
-                    return `<i class='fa fa-times delete-cliente' title='eliminar cliente'></i>`;
+                    let action_icons = ``;
+                    action_icons += `<i class='fa fa-pen edit-cliente' title='Editar cliente'></i>&nbsp;`;
+                    action_icons += `<i class='fa fa-times delete-cliente' title='Eliminar cliente'></i>`;
+                    return action_icons;
                 }
             },
         ],
@@ -74,6 +90,10 @@ function loadClientes() {
                 let id = $(this).closest('tr').attr('id');
                 eliminarCliente(id);
             });
+            $('.edit-cliente').off().click(function () {
+                let id = $(this).closest('tr').attr('id');
+                fillFormCliente(id);
+            });
         },
         "initComplete": function () {
         }
@@ -84,18 +104,19 @@ function loadClientes() {
 }
 
 function sendForm(id) {
+    let data = $(id).serialize() + `&id=${$(id).attr('data-clientid')}`;
     $.ajax({
         type: 'POST',
         url: base_url() + "/sistemacontable/clientes_controller/crear_cliente",
-        data: $(id).serialize(),
+        data: data,
         success: function (data, textStatus, request) {
             if (data.success == false) {
                 //seteo los errores en el formlario
                 set_form_errors(id, data.response);
             }
             else {
-                alert('ok!!');
                 clear_form(id);
+                $("#tbl_cliente").DataTable().ajax.reload();
             }
         },
         error: function (request, textStatus, error) {
@@ -122,4 +143,19 @@ function eliminarCliente(client_id) {
         },
         dataType: 'json'
     });
+}
+
+function fillFormCliente(client_id) {
+    $(".form-cliente").attr('data-clientid', client_id);
+    $("input[name='razon_social']").val(clientes[client_id].razon_social);
+    $("select[name='categoria_iva']").val(clientes[client_id].categoria_iva);
+    $("select[name='tipo_documento']").val(clientes[client_id].tipo_documento);
+    $("input[name='cuit']").val(clientes[client_id].cuit);
+    $("input[name='domicilio']").val(clientes[client_id].domicilio);
+    $("input[name='altura']").val(clientes[client_id].altura);
+    $("input[name='piso']").val(clientes[client_id].piso);
+    $("input[name='localidad']").val(clientes[client_id].localidad);
+    $("input[name='departamento']").val(clientes[client_id].departamento);
+    $("input[name='email']").val(clientes[client_id].email);
+    $("input[name='telefono']").val(clientes[client_id].telefono);
 }

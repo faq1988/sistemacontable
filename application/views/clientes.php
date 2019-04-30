@@ -41,12 +41,12 @@
             <!-- /.box-header -->
             <!-- form start -->
             <!--form role="form"-->
-            <form class='form-cliente'>
+            <form class='form-cliente' data-clientid='' >
               <div class="box-body">
 
               <div class="form-group">
                   <label for="exampleInputEmail1">Razón social</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" name="razon_social" placeholder="Razón social"
+                  <input type="text" class="form-control" name="razon_social" placeholder="Razón social"
                   value="<?php echo set_value('razon_social'); ?>">
                 </div>
                
@@ -57,8 +57,8 @@
                             <div class="form-group">
                             <label>Categoría IVA</label>
                             <select class="form-control" name="categoria_iva">
-                                <option>Monotributo</option>
-                                <option>Responsable inscripto</option>                    
+                                <option value="0">Monotributo</option>
+                                <option value="1">Responsable inscripto</option>                    
                             </select>
                             </div>
                         </div>
@@ -66,9 +66,9 @@
                             <div class="form-group">
                             <label>Tipo de documento</label>
                             <select class="form-control" name="tipo_documento">
-                                <option>DNI</option>
-                                <option>Libreta cívica</option>                    
-                                <option>Libreta enrolamiento</option>                    
+                                <option value ="1">DNI</option>
+                                <option values="2">Libreta cívica</option>                    
+                                <option values="3">Libreta enrolamiento</option>                    
                             </select>
                             </div>
                         </div>
