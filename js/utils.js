@@ -16,10 +16,3 @@ function clear_form(form) {
     $(form).find('select').prop("selectedIndex", 0);
 }
 
-function map_field(f, id) {
-    var field = {};
-    field.tipo_documento = { 1: 'DU', 2: 'Libreta Civica', 3: 'Libreta Enrolamiento' };
-    field.categoria_iva = { 0: 'Monotributo', 1: 'Responsable Inscripto' };
-
-    return field[f][id];
-}

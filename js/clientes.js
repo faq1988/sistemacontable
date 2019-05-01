@@ -48,13 +48,14 @@ function loadClientes() {
             {
                 title: "Categoria IVA",
                 render: function (d, t, f) {
-                    return map_field('categoria_iva', f.categoria_iva);
+                    let a = _CATEGORIA_IVA;
+                    return _CATEGORIA_IVA[f.categoria_iva];
                 }
             },
             {
                 title: "Documento", data: "val_select", sortable: true,
                 render: function (d, t, f) {
-                    return map_field('tipo_documento', f.tipo_documento) + ' - ' + f.cuit;
+                    return _TIPO_DOCUMENTO[f.tipo_documento] + ' - ' + f.cuit;;
                 }
             },
             {

@@ -30,7 +30,12 @@ class Main_Controller extends CI_Controller {
 		$css=array_merge($css,(is_array($css_array) && count($css_array)) ? $css_array: array( ));
 		$data=array();
 		$data["js_to_load"]=array_unique($js);
-	  $data["css_to_load"]=array_unique($css);
+		$data["css_to_load"]=array_unique($css);
+		//agrego constantes de utils
+		$this -> load -> model('Utils');
+		$utils = new ReflectionClass('Utils');
+		$data["constants"]=$utils->getStaticProperties();
+
 	  if($this->load->view('init_view','',TRUE)!== '')
 			$this -> load -> view('init_view',$data);
   
