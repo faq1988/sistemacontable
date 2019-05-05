@@ -48,7 +48,6 @@ function loadClientes() {
             {
                 title: "Categoria IVA",
                 render: function (d, t, f) {
-                    let a = _CATEGORIA_IVA;
                     return _CATEGORIA_IVA[f.categoria_iva];
                 }
             },

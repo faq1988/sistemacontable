@@ -133,7 +133,11 @@ class CI_DB_pdo_driver extends CI_DB {
 
 		try
 		{
-			return new PDO($this->dsn, $this->username, $this->password, $this->options);
+			$obj = new PDO($this->dsn, $this->username, $this->password, $this->options);
+			$this->options['PDO::ATTR_ERRMODE'] = PDO::ERRMODE_EXCEPTION;
+			$obj->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$obj->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL); 
+			return $obj;
 		}
 		catch (PDOException $e)
 		{
@@ -144,6 +148,7 @@ class CI_DB_pdo_driver extends CI_DB {
 
 			return FALSE;
 		}
+		
 	}
 
 	// --------------------------------------------------------------------

@@ -32,7 +32,7 @@ class Clientes_controller extends Main_Controller {
     $this->form_validation->set_rules('altura', 'Altura', 'required|numeric|greater_than[0]');
     $this->form_validation->set_rules('localidad', 'Localidad', 'required');
     $this->form_validation->set_rules('telefono', 'Teléfono', 'required');
-    $this->form_validation->set_rules('email', 'Correo electrónico', 'required');
+    $this->form_validation->set_rules('email', 'Correo electrónico', 'required|valid_email');
       
     
     if ($this->form_validation->run() == FALSE)      

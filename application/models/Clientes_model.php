@@ -19,17 +19,18 @@ function crear_cliente($data){
                 {$data['cuit']}, 
                 '{$data['domicilio']}',                 
                 '{$data['altura']}', 
-                {$data['piso']}, 
+                {$this -> db -> escape($data['piso'])}, 
                 '{$data['departamento']}', 
                 '{$data['localidad']}',                 
                 '{$data['telefono']}', 
                 '{$data['email']}',
                 0,
                 0,
-                sysdate()
+                sysdate(),
+                0
                 );";
-                var_dump($qry);exit;
-    return $this -> query($qry,$this -> db,'simple',array('manage_exception'=>TRUE));
+    $res= $this -> query($qry,$this -> db,'simple',array('manage_exception'=>TRUE));
+    return $res;
 }
 
 public function load_cliente($filter_array = array()){
