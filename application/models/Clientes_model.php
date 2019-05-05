@@ -26,8 +26,7 @@ function crear_cliente($data){
                 '{$data['email']}',
                 0,
                 0,
-                sysdate(),
-                0
+                sysdate()
                 );";
     $res= $this -> query($qry,$this -> db,'simple',array('manage_exception'=>TRUE));
     return $res;
