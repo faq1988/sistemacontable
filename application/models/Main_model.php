@@ -14,7 +14,7 @@ class Main_model extends CI_Model{
 
     protected function query($query_str, $database, $type = "PDOStatement", $aditional = array()){
         $result = array("success" => TRUE, "msg" => "", "result" => TRUE);
-
+        log_message('info','[DB] '.$query_str);
         //Parametros adicionales
         $transactional     = defaultFor($aditional["transactional"], FALSE);
         $row_number        = defaultFor($aditional["row_number"], FALSE);
@@ -116,15 +116,15 @@ class Main_model extends CI_Model{
                 $database -> trans_complete();
 
         }catch(PDOException $e){
-            if($database->_trans_depth>0){
-                $database -> _trans_status = FALSE;
-            }
+            // if($database->_trans_depth>0){
+            //     $database -> _trans_status = FALSE;
+            // }
 
             if($transactional){
                 $database -> trans_complete();
             }
 
-            $this -> logger -> e("DB_ERROR", "Code: " . $e -> getCode() . " - " . $e -> getMessage());
+            // $this -> logger -> e("DB_ERROR", "Code: " . $e -> getCode() . " - " . $e -> getMessage());
             $result["success"] = FALSE;
             $result["result"]  = NULL;
             if(ENVIRONMENT != 'production'){
@@ -140,11 +140,9 @@ class Main_model extends CI_Model{
             }
 
         }
-
         if($utf8 && $result["success"] && !is_object($result["result"]) ){
             $result["result"] = array_to_utf8($result["result"]);
         }
-
         if($manage_exception === TRUE){
             return $result;
         }else{
