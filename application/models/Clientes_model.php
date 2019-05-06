@@ -28,7 +28,7 @@ function crear_cliente($data){
                 0,
                 sysdate()
                 );";
-                var_dump($qry);exit;
+               //var_dump($qry);exit;
     return $this -> query($qry,$this -> db,'simple',array('manage_exception'=>TRUE));
 }
 
