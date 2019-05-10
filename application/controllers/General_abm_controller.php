@@ -3,7 +3,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 require_once(APPPATH .'controllers/Main_controller.php');
 
-class Rubros_controller extends Main_Controller {
+class General_abm_controller extends Main_Controller {
 
 	public function index()
 	{
@@ -13,10 +13,12 @@ class Rubros_controller extends Main_Controller {
 		redirect('login');
 	  }
 
-		$this -> default_vars(array(base_url().'js/rubros.js'));
-		$data = array('active_classes' => array('t_abm','l1_rubros'));
+    $this -> default_vars(array(base_url().'js/rubros.js'));
+    $data = array('active_classes' => array('t_abm','l1_gral_bm'));
+    $data['default_abm']='rubro';
+    $data['rubro']=$this -> load -> view('rubro',$data,TRUE);
 		$this->load->view('menu',$data);
-		$this->load->view('rubros');
+		$this->load->view('general_abm');
     $this->load->view('footer');
     }
     

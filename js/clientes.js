@@ -111,6 +111,9 @@ function sendForm(id) {
         data: data,
         success: function (data, textStatus, request) {
             if (data.success == false) {
+                if (data.result == null) {
+                    setMessage('danger', data.msg, 4000);
+                }
                 //seteo los errores en el formlario
                 set_form_errors(id, data.response);
             }
