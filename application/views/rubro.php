@@ -1,4 +1,4 @@
-      <div class="row rubro"  <?php echo ($default_abm!='rubro') ?'hidden':''?>>
+      <div class="row rubro abm"  <?php echo ($default_abm!='rubro') ?'hidden':''?>>
         <!-- left column -->
         <div class="col-md-8 col-md-offset-2">
           <!-- general form elements -->
@@ -9,7 +9,7 @@
             <!-- /.box-header -->
             <!-- form start -->
             <!--form role="form"-->
-            <form class='form-rubro' data-rubroid='' >
+            <form class='form-rubro ' data-rubroid='' >
               <div class="box-body">
 
               <div class="form-group">
@@ -30,7 +30,7 @@
         <!--/.col (right) -->
       </div>
       <!-- /.row -->
-      <div class="row rubro"  <?php echo ($default_abm!='rubro') ?'hidden':''?> >
+      <div class="row rubro abm"  <?php echo ($default_abm!='rubro') ?'hidden':''?> >
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">

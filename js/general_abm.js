@@ -3,7 +3,8 @@ $(document).ready(function () {
 });
 
 function bindEvents() {
-    $("#abm_select").change(function () {
+    $(".form-control").change(function () {
+        $(".abm").hide();
         $(`.${$(this).val()}`).show();
     });
 }

@@ -3,7 +3,8 @@ var rubros = [];
 
 $(document).ready(function () {
     bindEvents();
-    loadRubros();
+    if($(".form-rubro").is(":visible"))
+        loadRubros();
 });
 
 function bindEvents() {

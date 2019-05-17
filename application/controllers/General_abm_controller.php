@@ -13,7 +13,7 @@ class General_abm_controller extends Main_Controller {
 		redirect('login');
 	  }
 
-    $this -> default_vars(array(base_url().'js/rubros.js'));
+    $this -> default_vars(array(base_url().'js/rubros.js',base_url().'js/general_abm.js'));
     $data = array('active_classes' => array('t_abm','l1_gral_bm'));
     $data['default_abm']='rubro';
     $data['rubro']=$this -> load -> view('rubro',$data,TRUE);
