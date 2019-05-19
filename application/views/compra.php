@@ -12,8 +12,6 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
- 
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -31,64 +29,96 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <!-- left column -->
-        <div class="col-md-8 col-md-offset-2">
-          <!-- general form elements -->
+        <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <!-- <h3 class="box-title">Seleccione el Cliente</h3> -->
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form role="form">
-              <div class="box-body">
-              <div class="form-group">
-                  <label>Seleccione el Cliente</label>
-                  <select class="form-control">
-                    <option>cliente 1</option>
-                    <option>cliente 2</option>
-                    <option>cliente 3</option>
+              <div class="row form-group">
+                <div class="col-sm-6">
+                  <label>Proveedor</label>
+                  <select name='proveedor' class="form-control">
+                    <option value='1'>proveedor 1</option>
+                    <option value='2'>proveedor 2</option>
+                    <option value='3'>proveedor 3</option>
                   </select>
                 </div>
-
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+              </div>
+              <div class='row form-group'>
+                <div class="col-sm-6">
+                  <label>Cuenta</label>
+                  <input name='cta' type='text' class='form-control'>
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputFile">File input</label>
-                  <input type="file" id="exampleInputFile">
-
-                  <p class="help-block">Example block-level help text here.</p>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Check me out
-                  </label>
+                <div class="col-sm-6">
+                  <label>Razón Social</label>
+                  <select name='razon_social' class="form-control">
+                    <option value='1'>razón 1</option>
+                    <option value='2'>razón 2</option>
+                    <option value='3'>razón 3</option>
+                  </select>
                 </div>
               </div>
-              <!-- /.box-body -->
-
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+              <div class='row form-group'>
+                <div class="col-sm-3">
+                  <label>Cat. I.V.A.</label>
+                  <select name='iva' class="form-control">
+                    <option value='1'>cat_iva 1</option>
+                    <option value='2'>cat_iva 2</option>
+                    <option value='3'>cat_iva 3</option>
+                  </select>
+                </div>
+                <div class="col-sm-3">
+                  <label>Tipo.Doc.</label>
+                  <select name='tipo_doc' class="form-control">
+                    <option value='1'>tipo 1</option>
+                    <option value='2'>tipo 2</option>
+                    <option value='3'>tipo 3</option>
+                  </select>
+                </div>
+                <div class="col-sm-3">
+                  <label>Documento</label>
+                  <input name='doc' type='text' class='form-control'/>
+                </div>
+                <div class="col-sm-3">
+                  <label>Pcia.</label>
+                  <select name='prov' class="form-control">
+                    <option value='1'>provincia 1</option>
+                    <option value='2'>provincia 2</option>
+                    <option value='3'>provincia 3</option>
+                  </select>
+                </div>
               </div>
-            </form>
+              <div class='row form-group'>
+                <div class="col-sm-3">
+                  <label>Tipo comprobante</label>
+                  <select name='t_comp' class="form-control">
+                    <option value='1'>tipo comprobante 1</option>
+                    <option value='2'>tipo comprobante 2</option>
+                    <option value='3'>tipo comprobante 3</option>
+                  </select>
+                </div>
+                <div class="col-sm-3">
+                  <label>Tipo Factura</label>
+                  <select name='t_fact' class="form-control">
+                    <option value='1'>tipo factura 1</option>
+                    <option value='2'>tipo factura 2</option>
+                    <option value='3'>tipo factura 3</option>
+                  </select>
+                </div>
+                <div class="col-sm-3">
+                  <label>Sucursal</label>
+                  <input name='suc' type='text' class='form-control'/>
+                </div>
+                <div class="col-sm-3">
+                  <label>Número</label>
+                  <input name='num' type='text' class='form-control'/>
+                </div>
+              </div>
+            </div>
           </div>
-          <!-- /.box -->
         </div>
-        <!--/.col (right) -->
       </div>
-      <!-- /.row -->
     </section>
     <!-- /.content -->
-    
   </div>
- 
-  
-
+</div>
 </body>
 </html>
