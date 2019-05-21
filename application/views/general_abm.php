@@ -35,6 +35,7 @@
                 <div class="box-body">
                     <select class="form-control">
                         <option value='rubro'>Rubro</option>
+                        <option value='tipo_comprobante'>Tipo de comprobante</option>
                         <option>Otro</option>
                     </select>
                 </div>
@@ -42,6 +43,7 @@
         </div>
     <section class='content'>
         <?php echo $rubro ?>
+        <?php echo $tipo_comprobante ?>
     </section>
     </div>
 </div>

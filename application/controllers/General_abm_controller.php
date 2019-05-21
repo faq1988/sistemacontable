@@ -13,10 +13,11 @@ class General_abm_controller extends Main_Controller {
 		redirect('login');
 	  }
 
-    $this -> default_vars(array(base_url().'js/rubros.js',base_url().'js/general_abm.js'));
+    $this -> default_vars(array(base_url().'js/tipo_comprobantes.js',base_url().'js/rubros.js',base_url().'js/general_abm.js'));
     $data = array('active_classes' => array('t_abm','l1_gral_bm'));
     $data['default_abm']='rubro';
     $data['rubro']=$this -> load -> view('rubro',$data,TRUE);
+    $data['tipo_comprobante']=$this -> load -> view('tipo_comprobante',$data,TRUE);
 		$this->load->view('menu',$data);
 		$this->load->view('general_abm');
     $this->load->view('footer');
@@ -72,6 +73,51 @@ class General_abm_controller extends Main_Controller {
     echo JSON_ENCODE($res);
     exit;
   }
-	
+  
+  
+
+
+
+  public function crear_tipo_comprobante()
+  {    
+    $this->form_validation->set_rules('descripcion', 'Descripción', 'required');
+     
+    
+    if ($this->form_validation->run() == FALSE)      
+      {  
+        echo JSON_ENCODE(array( 'success' => FALSE,
+                                'response' => $this -> serialize_form_error(
+                                      array('descripcion'))));
+        exit;
+      } 
+      else{
+        $this->load->model('tipo_comprobante_model');
+        //genera variables por cada valor enviado por post
+        extract($this -> input -> post(),EXTR_OVERWRITE);
+        $res = $this->tipo_comprobante_model->crear_tipo_comprobante(compact('id','descripcion'));
+        echo JSON_ENCODE($res);
+        exit;
+      }
+
+  }
+
+
+  public function load_tipo_comprobante(){
+    $this->load->model('tipo_comprobante_model');
+    //genera variables por cada valor enviado por post
+    extract($this -> input -> post(),EXTR_OVERWRITE);
+    $res = $this->tipo_comprobante_model->load_tipo_comprobante(compact('st'));
+    echo JSON_ENCODE($res);
+    exit;
+  }
+
+  public function delete_tipo_comprobante(){
+    $this->load->model('tipo_comprobante_model');
+    //genera variables por cada valor enviado por post
+    extract($this -> input -> post(),EXTR_OVERWRITE);
+    $res = $this->tipo_comprobante_model->delete_tipo_comprobante($id);
+    echo JSON_ENCODE($res);
+    exit;
+  }
   }
 
