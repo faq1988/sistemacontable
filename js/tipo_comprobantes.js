@@ -1,30 +1,29 @@
+var tipo_comprobantes = [];
 
-var tipocomprobantes = [];
-
-$(document).ready(function () {
+$(document).ready(function() {
     bindEvents();
-    if($(".form-tipocomprobante").is(":visible"))
-        loadTipoComprobantes();
+    if ($(".form-tipo_comprobante").is(":visible"))
+        loadtipo_comprobantes();
 });
 
 function bindEvents() {
-    $(".send").off().click(function (e) {
+    $(".send").off().click(function(e) {
         e.preventDefault();
         e.stopPropagation();
-        sendForm('.form-tipocomprobante');
+        sendForm('.form-tipo_comprobante');
     });
 }
 
 
-function loadTipoComprobantes() {
+function loadtipo_comprobantes() {
     var data_table_config = {
         "ajax": {
             "url": base_url() + "/sistemacontable/general_abm_controller/load_tipo_comprobante",
             "type": "post",
             "data": { 'st': 0 },
-            "dataSrc": function (json) {
+            "dataSrc": function(json) {
                 json.result.forEach(e => {
-                    tipocomprobantes[e.id] = e;
+                    tipo_comprobantes[e.id] = e;
                 });
                 return json.result;
             },
@@ -38,10 +37,12 @@ function loadTipoComprobantes() {
         "sPaginationType": "numbers",
         "iDisplayLength": 100,
         "autoWidth": false,
-        "aLengthMenu": [[50, 100, 200, -1], [50, 100, 200, "Todos"]],
+        "aLengthMenu": [
+            [50, 100, 200, -1],
+            [50, 100, 200, "Todos"]
+        ],
         "stripeClasses": ["odd", "even"],
-        "columns": [
-            {
+        "columns": [{
                 title: "ID",
                 data: "id",
                 sortable: true,
@@ -53,7 +54,7 @@ function loadTipoComprobantes() {
             },
             {
                 title: "",
-                render: function (d, t, f) {
+                render: function(d, t, f) {
                     let action_icons = ``;
                     action_icons += `<i class='fa fa-pen edit-tipo-comprobante' title='Editar tipo de comprobante'></i>&nbsp;`;
                     action_icons += `<i class='fa fa-times delete-tipo-comprobante' title='Eliminar tipo de comprobante'></i>`;
@@ -61,22 +62,24 @@ function loadTipoComprobantes() {
                 }
             },
         ],
-        "createdRow": function (row, data, dataIndex) {
+        "createdRow": function(row, data, dataIndex) {
             $(row).attr('id', data.id);
         },
-        "order": [[0, 'desc'], [1, 'asc']],
-        "drawCallback": function () {
-            $('.delete-tipo-comprobante').off().click(function () {
+        "order": [
+            [0, 'desc'],
+            [1, 'asc']
+        ],
+        "drawCallback": function() {
+            $('.delete-tipo-comprobante').off().click(function() {
                 let id = $(this).closest('tr').attr('id');
-                eliminarTipoComprobante(id);
+                eliminartipo_comprobante(id);
             });
-            $('.edit-tipo-comprobante').off().click(function () {
+            $('.edit-tipo-comprobante').off().click(function() {
                 let id = $(this).closest('tr').attr('id');
-                fillFormTipoComprobante(id);
+                fillFormtipo_comprobante(id);
             });
         },
-        "initComplete": function () {
-        }
+        "initComplete": function() {}
     };
 
     $("#tbl_tipo_comprobante").DataTable(data_table_config);
@@ -84,49 +87,45 @@ function loadTipoComprobantes() {
 }
 
 function sendForm(id) {
-    let data = $(id).serialize() + `&id=${$(id).attr('data-tipocomprobanteid')}`;
+    let data = $(id).serialize() + `&id=${$(id).attr('data-tipo_comprobanteid')}`;
     $.ajax({
         type: 'POST',
         url: base_url() + "/sistemacontable/general_abm_controller/crear_tipo_comprobante",
         data: data,
-        success: function (data, textStatus, request) {
+        success: function(data, textStatus, request) {
             if (data.success == false) {
                 //seteo los errores en el formlario
                 set_form_errors(id, data.response);
-            }
-            else {
+            } else {
                 clear_form(id);
                 $("#tbl_tipo_comprobante").DataTable().ajax.reload();
             }
         },
-        error: function (request, textStatus, error) {
-        },
+        error: function(request, textStatus, error) {},
         dataType: 'json'
     });
 }
 
-function eliminarTipoComprobante(tipocomprobante_id) {
+function eliminartipo_comprobante(tipo_comprobante_id) {
     $.ajax({
         type: 'POST',
         url: base_url() + "/sistemacontable/general_abm_controller/delete_tipo_comprobante",
-        data: { 'id': tipocomprobante_id },
-        success: function (data, textStatus, request) {
+        data: { 'id': tipo_comprobante_id },
+        success: function(data, textStatus, request) {
             if (data.success == false) {
                 //seteo los errores en el formlario
                 set_form_errors(id, data.response);
-            }
-            else {
+            } else {
                 $("#tbl_tipo_comprobante").DataTable().ajax.reload();
             }
         },
-        error: function (request, textStatus, error) {
-        },
+        error: function(request, textStatus, error) {},
         dataType: 'json'
     });
 }
 
-function fillFormTipoComprobante(tipocomprobante_id) {
-    $(".form-tipo-comprobante").attr('data-tipocomprobanteid', tipocomprobante_id);
-    $("input[name='descripcion']").val(tipocomprobantes[tipocomprobante_id].descripcion);
+function fillFormtipo_comprobante(tipo_comprobante_id) {
+    $(".form-tipo-comprobante").attr('data-tipo_comprobanteid', tipo_comprobante_id);
+    $("input[name='descripcion']").val(tipo_comprobantes[tipo_comprobante_id].descripcion);
 
 }

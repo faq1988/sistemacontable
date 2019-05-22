@@ -112,6 +112,162 @@
                   <input name='num' type='text' class='form-control'/>
                 </div>
               </div>
+              <div class='row form-group'>
+                <div class="col-sm-3">
+                  <label>Fecha</label>
+                  <input name='date' class='datepicker form-control' type='text'/>
+                </div>
+                <div class="col-sm-2">
+                  <label>Libro I.V.A.</label>
+                  <input name='l_iva' type='text' class='form-control'/>
+                </div>
+                <div class="col-sm-2">
+                  <label>Asiento</label>
+                  <input name='asiento' type='text' class='form-control'/>
+                </div>
+                <div class="col-sm-2">
+                  <label>Tipo</label>
+                  <select name='tipo' class="form-control">
+                    <option value='1'>Caja</option>
+                    <option value='2'>Cta.Cte.</option>
+                    <option value='3'>Banco</option>
+                  </select>
+                </div>
+                <div class="col-sm-2">
+                  <label>&nbsp;</label>
+                  <input name='tipo_id' type='text' class='form-control'/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Custom Tabs -->
+          <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">I.V.A.</a></li>
+              <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">Contabilidad</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_1">
+                  <div class="box">
+                  <!-- /.box-header -->
+                  <div class="box-body no-padding">
+                    <table class="table table-condensed">
+                      <tbody><tr>
+                        <th style="width: 10px">#</th>
+                        <th>Rubro</th>
+                        <th>Algo mas?</th>
+                      </tr>
+                      <tr>
+                        <td>1.</td>
+                        <td>trubro 1</td>
+                        <td>
+                          AM 1
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2.</td>
+                        <td>Rubro 2</td>
+                        <td> AM 2
+                        </td>
+                      </tr>
+                    </tbody></table>
+                  </div>
+                  <!-- /.box-body -->
+                </div>
+              </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="tab_2">
+                  <div class="box">
+                <!-- /.box-header -->
+                  <div class="box-body no-padding">
+                    <table class="table table-condensed">
+                      <tbody><tr>
+                        <th style="width: 10px">#</th>
+                        <th>Task</th>
+                        <th>Progress</th>
+                        <th style="width: 40px">Label</th>
+                      </tr>
+                      <tr>
+                        <td>1.</td>
+                        <td>Update software</td>
+                        <td>
+                          <div class="progress progress-xs">
+                            <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                          </div>
+                        </td>
+                        <td><span class="badge bg-red">55%</span></td>
+                      </tr>
+                      <tr>
+                        <td>2.</td>
+                        <td>Clean database</td>
+                        <td>
+                          <div class="progress progress-xs">
+                            <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
+                          </div>
+                        </td>
+                        <td><span class="badge bg-yellow">70%</span></td>
+                      </tr>
+                      <tr>
+                        <td>3.</td>
+                        <td>Cron job running</td>
+                        <td>
+                          <div class="progress progress-xs progress-striped active">
+                            <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
+                          </div>
+                        </td>
+                        <td><span class="badge bg-light-blue">30%</span></td>
+                      </tr>
+                      <tr>
+                        <td>4.</td>
+                        <td>Fix and squish bugs</td>
+                        <td>
+                          <div class="progress progress-xs progress-striped active">
+                            <div class="progress-bar progress-bar-success" style="width: 90%"></div>
+                          </div>
+                        </td>
+                        <td><span class="badge bg-green">90%</span></td>
+                      </tr>
+                    </tbody></table>
+                  </div>
+                  <!-- /.box-body -->
+                </div>
+              </div>
+              <!-- /.tab-pane -->
+            </div>
+            <!-- /.tab-content -->
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="box box-warning">
+                <div class="box-header with-border">
+                  <div class="row form-group">
+                      <div class="col-sm-2">
+                        <label>Total</label>
+                        <input name='total' type='text' class='form-control'>
+                      </div>
+                      <div class="col-sm-2">
+                        <label>Neto</label>
+                        <input name='neto' type='text' class='form-control'>
+                      </div>
+                      <div class="col-sm-2">
+                        <label>Nro. Grab.</label>
+                        <input name='nro_grab' type='text' class='form-control'>
+                      </div>
+                      <div class="col-sm-2">
+                        <label>Monotributo</label>
+                        <input name='mnto' type='text' class='form-control'>
+                      </div>
+                      <div class="col-sm-2">
+                        <label>I.V.A.</label>
+                        <input name='tot_iva' type='text' class='form-control'>
+                      </div>
+                      <div class="col-sm-2">
+                        <label>Otros</label>
+                        <input name='otros' type='text' class='form-control'>
+                      </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
