@@ -3,7 +3,7 @@ var tipo_comprobantes = [];
 $(document).ready(function() {
     bindEvents();
     if ($(".form-tipo_comprobante").is(":visible"))
-        loadtipo_comprobantes();
+        load_tipo_comprobante();
 });
 
 function bindEvents() {
@@ -14,8 +14,12 @@ function bindEvents() {
     });
 }
 
+function reload_tipo_comprobante() {
+    $("#tbl_tipo_comprobante").DataTable().ajax.reload();
+}
 
-function loadtipo_comprobantes() {
+
+function load_tipo_comprobante() {
     var data_table_config = {
         "ajax": {
             "url": base_url() + "/sistemacontable/general_abm_controller/load_tipo_comprobante",

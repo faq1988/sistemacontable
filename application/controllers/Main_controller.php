@@ -14,7 +14,8 @@ class Main_Controller extends CI_Controller {
 			
 		  array_push($css,base_url().'css/Ionicons/css/ionicons.min.css');
 		  array_push($css,base_url().'css/AdminLTE.min.css');
-		  array_push($css,base_url().'css/skins/_all-skins.min.css');
+			array_push($css,base_url().'css/skins/_all-skins.min.css');
+			array_push($css,base_url().'css/custom.css');
 
 		  array_push($js,base_url().'js/plugins/jquery.min.js');
 		  array_push($js,base_url().'js/plugins/bootstrap.min.js');

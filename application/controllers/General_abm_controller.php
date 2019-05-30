@@ -15,7 +15,7 @@ class General_abm_controller extends Main_Controller {
 
     $this -> default_vars(array(base_url().'js/tipo_comprobantes.js',base_url().'js/rubros.js',base_url().'js/general_abm.js'));
     $data = array('active_classes' => array('t_abm','l1_gral_bm'));
-    $data_abm['default_abm']='rubro';
+    $data_abm['default_abm']='tipo_comprobante';
     $data_abm['tipo_comprobante']= $this -> load -> view('tipo_comprobante',$data_abm,TRUE);
     $data_abm['rubro']= $this -> load -> view('rubro',$data_abm,TRUE);
 		$this->load->view('menu',$data);

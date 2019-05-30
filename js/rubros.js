@@ -1,28 +1,31 @@
-
 var rubros = [];
 
-$(document).ready(function () {
+$(document).ready(function() {
     bindEvents();
-    if($(".form-rubro").is(":visible"))
-        loadRubros();
+    if ($(".form-rubro").is(":visible"))
+        load_rubro();
 });
 
 function bindEvents() {
-    $(".send").off().click(function (e) {
+    $(".send").off().click(function(e) {
         e.preventDefault();
         e.stopPropagation();
         sendForm('.form-rubro');
     });
 }
 
+function reload_rubro() {
+    $("#tbl_rubro").DataTable().ajax.reload();
+}
 
-function loadRubros() {
+
+function load_rubro() {
     var data_table_config = {
         "ajax": {
             "url": base_url() + "/sistemacontable/general_abm_controller/load_rubro",
             "type": "post",
             "data": { 'st': 0 },
-            "dataSrc": function (json) {
+            "dataSrc": function(json) {
                 json.result.forEach(e => {
                     rubros[e.id] = e;
                 });
@@ -38,10 +41,12 @@ function loadRubros() {
         "sPaginationType": "numbers",
         "iDisplayLength": 100,
         "autoWidth": false,
-        "aLengthMenu": [[50, 100, 200, -1], [50, 100, 200, "Todos"]],
+        "aLengthMenu": [
+            [50, 100, 200, -1],
+            [50, 100, 200, "Todos"]
+        ],
         "stripeClasses": ["odd", "even"],
-        "columns": [
-            {
+        "columns": [{
                 title: "ID",
                 data: "id",
                 sortable: true,
@@ -53,7 +58,7 @@ function loadRubros() {
             },
             {
                 title: "",
-                render: function (d, t, f) {
+                render: function(d, t, f) {
                     let action_icons = ``;
                     action_icons += `<i class='fa fa-pen edit-rubro' title='Editar rubro'></i>&nbsp;`;
                     action_icons += `<i class='fa fa-times delete-rubro' title='Eliminar rubro'></i>`;
@@ -61,22 +66,24 @@ function loadRubros() {
                 }
             },
         ],
-        "createdRow": function (row, data, dataIndex) {
+        "createdRow": function(row, data, dataIndex) {
             $(row).attr('id', data.id);
         },
-        "order": [[0, 'desc'], [1, 'asc']],
-        "drawCallback": function () {
-            $('.delete-rubro').off().click(function () {
+        "order": [
+            [0, 'desc'],
+            [1, 'asc']
+        ],
+        "drawCallback": function() {
+            $('.delete-rubro').off().click(function() {
                 let id = $(this).closest('tr').attr('id');
                 eliminarRubro(id);
             });
-            $('.edit-rubro').off().click(function () {
+            $('.edit-rubro').off().click(function() {
                 let id = $(this).closest('tr').attr('id');
                 fillFormRubro(id);
             });
         },
-        "initComplete": function () {
-        }
+        "initComplete": function() {}
     };
 
     $("#tbl_rubro").DataTable(data_table_config);
@@ -89,18 +96,16 @@ function sendForm(id) {
         type: 'POST',
         url: base_url() + "/sistemacontable/general_abm_controller/crear_rubro",
         data: data,
-        success: function (data, textStatus, request) {
+        success: function(data, textStatus, request) {
             if (data.success == false) {
                 //seteo los errores en el formlario
                 set_form_errors(id, data.response);
-            }
-            else {
+            } else {
                 clear_form(id);
                 $("#tbl_rubro").DataTable().ajax.reload();
             }
         },
-        error: function (request, textStatus, error) {
-        },
+        error: function(request, textStatus, error) {},
         dataType: 'json'
     });
 }
@@ -110,17 +115,15 @@ function eliminarRubro(rubro_id) {
         type: 'POST',
         url: base_url() + "/sistemacontable/general_abm_controller/delete_rubro",
         data: { 'id': rubro_id },
-        success: function (data, textStatus, request) {
+        success: function(data, textStatus, request) {
             if (data.success == false) {
                 //seteo los errores en el formlario
                 set_form_errors(id, data.response);
-            }
-            else {
+            } else {
                 $("#tbl_rubro").DataTable().ajax.reload();
             }
         },
-        error: function (request, textStatus, error) {
-        },
+        error: function(request, textStatus, error) {},
         dataType: 'json'
     });
 }
