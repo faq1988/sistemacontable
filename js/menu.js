@@ -13,6 +13,9 @@ function bindMenuEvents() {
     $(document).find(".l1_clientes").off().on('click', function (e) {
         window.location.href = base_url() + "/sistemacontable/clientes_controller";
     });
+    $(document).find(".l1_proveedores").off().on('click', function (e) {
+        window.location.href = base_url() + "/sistemacontable/proveedores_controller";
+    });
     $(document).find(".l1_gral_abm").off().on('click', function (e) {
         window.location.href = base_url() + "/sistemacontable/general_abm_controller";
     });

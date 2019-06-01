@@ -213,6 +213,7 @@
           </a>
           <ul class="treeview-menu">
             <li class="l1_clientes"><a ><i class="fa fa-circle-o"></i> Clientes</a></li>
+            <li class="l1_proveedores"><a ><i class="fa fa-circle-o"></i> Proveedores</a></li>
             <li class="l1_comprobantes"><a ><i class="fa fa-circle-o"></i> Comprobantes</a></li>
             <li class="l1_gral_abm"><a ><i class="fa fa-circle-o"></i> ABMs Generales</a></li>
           </ul>

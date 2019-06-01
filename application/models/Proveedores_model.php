@@ -2,16 +2,16 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 require_once(APPPATH .'models/Main_model.php');
 
-class Clientes_model extends Main_model{
+class Proveedores_model extends Main_model{
 public function __construct()
 {
   parent::__construct();
 }
 
 
-function crear_cliente($data){
+function crear_proveedor($data){
     $id=(isset($data['id']) && $data['id']!='') ? $data['id']:0;
-    $qry="REPLACE INTO cliente VALUES( 
+    $qry="REPLACE INTO proveedor VALUES( 
                 {$id},
                 '{$data['razon_social']}', 
                 '{$data['categoria_iva']}', 
@@ -32,37 +32,37 @@ function crear_cliente($data){
     return $res;
 }
 
-public function load_cliente($filter_array = array()){
+public function load_proveedor($filter_array = array()){
   $filter = '';
   $filter .= (isset($filter_array['st'])) ? " AND st={$filter_array['st']} ": ' ';
   $qry="SELECT * 
-        FROM cliente
+        FROM proveedor
         WHERE  1=1 {$filter}";
   return $this -> query($qry,$this -> db,'array',array('manage_exception'=>TRUE));
 }
 
 //baja logica
-public function delete_cliente($id){
-  $qry="UPDATE cliente
+public function delete_proveedor($id){
+  $qry="UPDATE proveedor
         set st=1
         WHERE id={$id}";
   return $this -> query($qry,$this -> db,'simple',array('manage_exception'=>TRUE));
 }
 
-public function obtener_cliente($id){
+public function obtener_proveedor($id){
 
 $this->db->where('id', $id);
-$q = $this->db->get('cliente');
+$q = $this->db->get('proveedor');
 if ($q->num_rows() >0 ) return $q;//->result();
 }
 
 
 
 
-function eliminar_cliente($id)
+function eliminar_proveedor($id)
 	{
 		$this->db->where('id =', $id);
-		$this->db->delete('cliente');
+		$this->db->delete('proveedor');
 	}
 
 
