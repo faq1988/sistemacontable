@@ -11,7 +11,7 @@ public function __construct()
 
 function crear_tipo_comprobante($data){
     $id=(isset($data['id']) && $data['id']!='') ? $data['id']:0;
-    $qry="REPLACE INTO tipo VALUES( 
+    $qry="REPLACE INTO tipo_comprobante VALUES( 
                 {$id},
                 '{$data['descripcion']}',                 
                 0,                                
@@ -26,14 +26,14 @@ public function load_tipo_comprobante($filter_array = array()){
   $filter = '';
   $filter .= (isset($filter_array['st'])) ? " AND st={$filter_array['st']} ": ' ';
   $qry="SELECT * 
-        FROM tipo
+        FROM tipo_comprobante
         WHERE  1=1 {$filter}";
   return $this -> query($qry,$this -> db,'array',array('manage_exception'=>TRUE));
 }
 
 //baja logica
 public function delete_tipo_comprobante($id){
-  $qry="UPDATE tipo
+  $qry="UPDATE tipo_comprobante
         set st=1
         WHERE id={$id}";
   return $this -> query($qry,$this -> db,'simple',array('manage_exception'=>TRUE));
@@ -42,7 +42,7 @@ public function delete_tipo_comprobante($id){
 public function obtener_tipo_comprobante($id){
 
 $this->db->where('id', $id);
-$q = $this->db->get('tipo');
+$q = $this->db->get('tipo_comprobante');
 if ($q->num_rows() >0 ) return $q;//->result();
 }
 

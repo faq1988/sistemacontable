@@ -15,7 +15,7 @@ function bindEvents() {
 }
 
 function reload_tipo_comprobante() {
-    $("#tbl_tipo_comprobante").DataTable().ajax.reload();
+    load_tipo_comprobante()
 }
 
 
@@ -36,6 +36,7 @@ function load_tipo_comprobante() {
         "processing": true,
         "deferRender": false,
         "searching": true,
+        "destroy": true,
         "orderClasses": false,
         "paging": true,
         "sPaginationType": "numbers",

@@ -1,5 +1,4 @@
 var rubros = [];
-
 $(document).ready(function() {
     bindEvents();
     if ($(".form-rubro").is(":visible"))
@@ -15,7 +14,7 @@ function bindEvents() {
 }
 
 function reload_rubro() {
-    $("#tbl_rubro").DataTable().ajax.reload();
+    load_rubro()
 }
 
 
@@ -35,6 +34,7 @@ function load_rubro() {
         "stateSave": false, // guarda el estado en el local storage (orden, pagina)
         "processing": true,
         "deferRender": false,
+        "destroy": true,
         "searching": true,
         "orderClasses": false,
         "paging": true,
