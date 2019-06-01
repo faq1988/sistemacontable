@@ -1,191 +1,321 @@
+<!DOCTYPE html>
 <html>
-    <head>
 
-    <div class="col-md-6">
-          <!-- Horizontal Form -->
-          <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">Horizontal Form</h3>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Modulo de Ventas</title>
+  <!-- Tell the brow no-padser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          Menu de Ventas
+        </h1>
+        <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-dashboard"></i> Menu</a></li>
+          <li><a href="#">Compra y Venta</a></li>
+          <li class="active">Ventas</li>
+        </ol>
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="row no-pad">
+          <div class="col-md-12">
+            <div class="box box-primary">
+              <div class="box-header with-border">
+                
+                <div class='row no-pad form-group'>
+                  <div class="col-sm-3">
+                    <label>Cuenta</label>
+                    <input name='cta' type='text' class='form-control input-sm'>
+                  </div>
+                  <div class="col-sm-3">
+                    <label>Cliente</label>
+                    <select name='cliente' class="form-control">
+                      <option value='1'>cliente 1</option>
+                      <option value='2'>cliente 2</option>
+                      <option value='3'>cliente 3</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-3">
+                    <label>Cat. I.V.A.</label>
+                    <select name='iva' class="form-control">
+                      <option value='1'>cat_iva 1</option>
+                      <option value='2'>cat_iva 2</option>
+                      <option value='3'>cat_iva 3</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-3">
+                    <label>Tipo.Doc.</label>
+                    <select name='tipo_doc' class="form-control">
+                      <option value='1'>tipo 1</option>
+                      <option value='2'>tipo 2</option>
+                      <option value='3'>tipo 3</option>
+                    </select>
+                  </div>
+                </div>
+                <div class='row no-pad form-group'>
+                 
+                  <div class="col-sm-3">
+                    <label>Documento</label>
+                    <input name='doc' type='text' class='form-control input-sm' />
+                  </div>
+                  <div class="col-sm-3">
+                    <label>Pcia.</label>
+                    <select name='prov' class="form-control">
+                      <option value='1'>provincia 1</option>
+                      <option value='2'>provincia 2</option>
+                      <option value='3'>provincia 3</option>
+                    </select>
+                  </div>
+
+                  <div class="col-sm-3">
+                    <label>Tipo comprobante</label>
+                    <select name='t_comp' class="form-control">
+                      <option value='1'>tipo comprobante 1</option>
+                      <option value='2'>tipo comprobante 2</option>
+                      <option value='3'>tipo comprobante 3</option>
+                    </select>
+                  </div>
+
+                  <div class="col-sm-3">
+                    <label>Número</label>
+                    <input name='num' type='text' class='form-control input-sm' />
+                  </div>
+
+                </div>
+               
+                <div class='row no-pad form-group'>
+                  <div class="col-sm-3">
+                    <label>Fecha</label>
+                    <input name='date' class='datepicker form-control' type=' input-smtext' />
+                  </div>
+                 
+                  <div class="col-sm-2">
+                    <label>Tipo</label>
+                    <select name='tipo' class="form-control">
+                      <option value='1'>Caja</option>
+                      <option value='2'>Cta.Cte.</option>
+                      <option value='3'>Banco</option>
+                    </select>
+                  </div>
+                 
+                </div>
+              </div>
             </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form class="form-horizontal">
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-
-                  <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+            <!-- Custom Tabs -->
+            <div class="nav-tabs-custom">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">I.V.A.</a></li>
+                <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">Contabilidad</a></li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="tab_1">
+                  <div class="box">
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding">
+                      <table class="table table-condensed">
+                        <tbody>
+                          <tr>
+                            <th style="width: 10px">#</th>
+                            <th>Rubro</th>
+                            <th>Algo mas?</th>
+                          </tr>
+                          <tr>
+                            <td>1.</td>
+                            <td>trubro 1</td>
+                            <td>
+                              AM 1
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>2.</td>
+                            <td>Rubro 2</td>
+                            <td> AM 2
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!-- /.box-body -->
                   </div>
                 </div>
-                <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-
-                  <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                <!-- /.tab-pane -->
+                <div class="tab-pane" id="tab_2">
+                  <div class="box">
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding">
+                      <table class="table table-condensed">
+                        <tbody>
+                          <tr>
+                            <th style="width: 10px">#</th>
+                            <th>Task</th>
+                            <th>Progress</th>
+                            <th style="width: 40px">Label</th>
+                          </tr>
+                          <tr>
+                            <td>1.</td>
+                            <td>Update software</td>
+                            <td>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                              </div>
+                            </td>
+                            <td><span class="badge bg-red">55%</span></td>
+                          </tr>
+                          <tr>
+                            <td>2.</td>
+                            <td>Clean database</td>
+                            <td>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
+                              </div>
+                            </td>
+                            <td><span class="badge bg-yellow">70%</span></td>
+                          </tr>
+                          <tr>
+                            <td>3.</td>
+                            <td>Cron job running</td>
+                            <td>
+                              <div class="progress progress-xs progress-striped active">
+                                <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
+                              </div>
+                            </td>
+                            <td><span class="badge bg-light-blue">30%</span></td>
+                          </tr>
+                          <tr>
+                            <td>4.</td>
+                            <td>Fix and squish bugs</td>
+                            <td>
+                              <div class="progress progress-xs progress-striped active">
+                                <div class="progress-bar progress-bar-success" style="width: 90%"></div>
+                              </div>
+                            </td>
+                            <td><span class="badge bg-green">90%</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!-- /.box-body -->
                   </div>
                 </div>
-                <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox"> Remember me
-                      </label>
+                <!-- /.tab-pane -->
+              </div>
+              <!-- /.tab-content -->
+            </div>
+            <div class="row no-pad">
+              <div class="col-md-12">
+                <div class="box box-warning">
+                  <div class="box-header with-border">
+                    <div class="row no-pad form-group">
+                      <div class="col-sm-2">
+                        <label>Total</label>
+                        <input name='total' type='text' class='form-control input-sm'>
+                      </div>
+                      <div class="col-sm-2">
+                        <label>Neto</label>
+                        <input name='neto' type='text' class='form-control input-sm'>
+                      </div>
+                      <div class="col-sm-2">
+                        <label>Nro. Grab.</label>
+                        <input name='nro_grab' type='text' class='form-control input-sm'>
+                      </div>
+                      <div class="col-sm-2">
+                        <label>Monotributo</label>
+                        <input name='mnto' type='text' class='form-control input-sm'>
+                      </div>
+                      <div class="col-sm-2">
+                        <label>I.V.A.</label>
+                        <input name='tot_iva' type='text' class='form-control input-sm'>
+                      </div>
+                      <div class="col-sm-2">
+                        <label>Otros</label>
+                        <input name='otros' type='text' class='form-control input-sm'>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- /.box-body -->
-              <div class="box-footer">
-                <button type="submit" class="btn btn-default">Cancel</button>
-                <button type="submit" class="btn btn-info pull-right">Sign in</button>
+            </div>
+            <div class="box box-danger">
+              <div class='row no-pad'>
+                <div class='col-sm-6'>
+                  <form class="form-horizontal">
+                    <label> Detalle Rubro:</label>
+                    <div class="box-body">
+                      <div class="form-group mb-5">
+                        <label for="neto_grabado" class="col-sm-4 control-label">Neto Grabado:</label>
+                        <div class="col-sm-6">
+                          <input name='neto_grabado' type="text" placeholder='0.00' class="form-control" id="neto_grabado">
+                        </div>
+                      </div>
+                      <div class="form-group mb-5">
+                        <label for="excento" class="col-sm-4 control-label">Excento:</label>
+                        <div class="col-sm-6">
+                          <input name='excento' type="text" placeholder='0.00' class="form-control" id="excento">
+                        </div>
+                      </div>
+                      <div class="form-group mb-5">
+                        <label for="comp_mono" class="col-sm-4 control-label">Compras Monotrib:</label>
+                        <div class="col-sm-6">
+                          <input name='comp_mono' type="text" placeholder='0.00' class="form-control" id="comp_mono">
+                        </div>
+                      </div>
+                      <div class="form-group mb-5">
+                        <label for="tot_rubro" class="col-sm-4 control-label">Total Rubro:</label>
+                        <div class="col-sm-6">
+                          <input name='tot_rubro' type="text" placeholder='0.00' class="form-control" id="tot_rubro">
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class='col-sm-6'>
+                  <div class="box-body no-padding">
+                    <table class="table table-condensed">
+                      <tbody>
+                        <tr>
+                          <th style="width: 10px">#</th>
+                          <th>Rubro</th>
+                          <th>Algo mas?</th>
+                        </tr>
+                        <tr>
+                          <td>1.</td>
+                          <td>trubro 1</td>
+                          <td>
+                            AM 1
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>2.</td>
+                          <td>Rubro 2</td>
+                          <td> AM 2
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
-              <!-- /.box-footer -->
-            </form>
-          </div>
-          <!-- /.box -->
-          <!-- general form elements disabled -->
-          <div class="box box-warning">
-            <div class="box-header with-border">
-              <h3 class="box-title">General Elements</h3>
             </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <form role="form">
-                <!-- text input -->
-                <div class="form-group">
-                  <label>Text</label>
-                  <input type="text" class="form-control" placeholder="Enter ...">
-                </div>
-                <div class="form-group">
-                  <label>Text Disabled</label>
-                  <input type="text" class="form-control" placeholder="Enter ..." disabled>
-                </div>
-
-                <!-- textarea -->
-                <div class="form-group">
-                  <label>Textarea</label>
-                  <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
-                </div>
-                <div class="form-group">
-                  <label>Textarea Disabled</label>
-                  <textarea class="form-control" rows="3" placeholder="Enter ..." disabled></textarea>
-                </div>
-
-                <!-- input states -->
-                <div class="form-group has-success">
-                  <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Input with success</label>
-                  <input type="text" class="form-control" id="inputSuccess" placeholder="Enter ...">
-                  <span class="help-block">Help block with success</span>
-                </div>
-                <div class="form-group has-warning">
-                  <label class="control-label" for="inputWarning"><i class="fa fa-bell-o"></i> Input with
-                    warning</label>
-                  <input type="text" class="form-control" id="inputWarning" placeholder="Enter ...">
-                  <span class="help-block">Help block with warning</span>
-                </div>
-                <div class="form-group has-error">
-                  <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> Input with
-                    error</label>
-                  <input type="text" class="form-control" id="inputError" placeholder="Enter ...">
-                  <span class="help-block">Help block with error</span>
-                </div>
-
-                <!-- checkbox -->
-                <div class="form-group">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox">
-                      Checkbox 1
-                    </label>
-                  </div>
-
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox">
-                      Checkbox 2
-                    </label>
-                  </div>
-
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" disabled>
-                      Checkbox disabled
-                    </label>
-                  </div>
-                </div>
-
-                <!-- radio -->
-                <div class="form-group">
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                      Option one is this and that&mdash;be sure to include why it's great
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                      Option two can be something else and selecting it will deselect option one
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
-                      Option three is disabled
-                    </label>
-                  </div>
-                </div>
-
-                <!-- select -->
-                <div class="form-group">
-                  <label>Select</label>
-                  <select class="form-control">
-                    <option>option 1</option>
-                    <option>option 2</option>
-                    <option>option 3</option>
-                    <option>option 4</option>
-                    <option>option 5</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label>Select Disabled</label>
-                  <select class="form-control" disabled>
-                    <option>option 1</option>
-                    <option>option 2</option>
-                    <option>option 3</option>
-                    <option>option 4</option>
-                    <option>option 5</option>
-                  </select>
-                </div>
-
-                <!-- Select multiple-->
-                <div class="form-group">
-                  <label>Select Multiple</label>
-                  <select multiple class="form-control">
-                    <option>option 1</option>
-                    <option>option 2</option>
-                    <option>option 3</option>
-                    <option>option 4</option>
-                    <option>option 5</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label>Select Multiple Disabled</label>
-                  <select multiple class="form-control" disabled>
-                    <option>option 1</option>
-                    <option>option 2</option>
-                    <option>option 3</option>
-                    <option>option 4</option>
-                    <option>option 5</option>
-                  </select>
-                </div>
-
-              </form>
-            </div>
-            <!-- /.box-body -->
+            
           </div>
-          <!-- /.box -->
         </div>
-    </head>
+      </section>
+      <!-- /.content -->
+    </div>
+  </div>
+</body>
+
 </html>
