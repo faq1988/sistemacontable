@@ -118,6 +118,7 @@ function sendForm(id) {
                 set_form_errors(id, data.response);
             }
             else {
+                $(id).attr('data-proveedorid', '');
                 clear_form(id);
                 $("#tbl_proveedor").DataTable().ajax.reload();
             }
