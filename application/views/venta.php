@@ -42,10 +42,8 @@
                   </div>
                   <div class="col-sm-3">
                     <label>Cliente</label>
-                    <select name='cliente' class="form-control">
-                      <option value='1'>cliente 1</option>
-                      <option value='2'>cliente 2</option>
-                      <option value='3'>cliente 3</option>
+                    <select name='cliente' id='cliente' class="form-control">
+                      
                     </select>
                   </div>
                   <div class="col-sm-3">
