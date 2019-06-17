@@ -71,19 +71,13 @@
                   </div>
                   <div class="col-sm-3">
                     <label>Pcia.</label>
-                    <select name='prov' class="form-control">
-                      <option value='1'>provincia 1</option>
-                      <option value='2'>provincia 2</option>
-                      <option value='3'>provincia 3</option>
+                    <select name='provincias' id='provincias' class="form-control">                      
                     </select>
                   </div>
 
                   <div class="col-sm-3">
                     <label>Tipo comprobante</label>
-                    <select name='t_comp' class="form-control">
-                      <option value='1'>tipo comprobante 1</option>
-                      <option value='2'>tipo comprobante 2</option>
-                      <option value='3'>tipo comprobante 3</option>
+                    <select name='tipo_comprobante' id='tipo_comprobante' class="form-control">                      
                     </select>
                   </div>
 
