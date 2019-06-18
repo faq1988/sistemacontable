@@ -1,0 +1,11 @@
+
+1. Va a la lupita y elije proveedor.
+2. Ahi carga automatico la razon social, tipo comprobante, tf y sucursal.
+3. El cursor se pone en numero de comprobante.
+4. Pasa de campo en campo con tecla enter hasta el año.
+5. Despues de año salta a neto gravado.
+6. Al cargar neto gravado se  calcula automatico el iva en detalle de impuestos, que depende del rubro cargado en ese proveedor.
+7. En caso de haber mas impuestos de agregan con tecla f7.
+8. Luego va a total rubro, se pueden agregar mas rubros siempre grabando el que ya esta cargado sino se pierde.
+9. Tecla f2 guarda comprobante y termina.
+10. Se blanquea el formulario para reiniciar el proceso.
