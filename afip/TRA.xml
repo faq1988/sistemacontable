@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<loginTicketRequest version="1.0"><header><uniqueId>1561577043</uniqueId><generationTime>2019-06-26T21:14:03+02:00</generationTime><expirationTime>2019-06-26T21:34:03+02:00</expirationTime></header><service>dummy</service></loginTicketRequest>
