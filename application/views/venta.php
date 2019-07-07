@@ -113,31 +113,22 @@
                 <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">Contabilidad</a></li>
               </ul>
               <div class="tab-content">
-                <div class="tab-pane active" id="tab_1">
+               <div class="tab-pane active" id="tab_1">
                   <div class="box">
                     <!-- /.box-header -->
                     <div class="box-body no-padding">
-                      <table class="table table-condensed">
-                        <tbody>
+                      <table id='tbl_iva' class="table table-condensed">
+                        <thead>
                           <tr>
-                            <th style="width: 10px">#</th>
                             <th>Rubro</th>
-                            <th>Algo mas?</th>
+                            <th>Total</th>
+                            <th>Neto</th>
+                            <th>Neto No Grab.</th>
+                            <th>Compras a Monotrib.</th>
+                            <th>Alicuota</th>
                           </tr>
-                          <tr>
-                            <td>1.</td>
-                            <td>trubro 1</td>
-                            <td>
-                              AM 1
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>2.</td>
-                            <td>Rubro 2</td>
-                            <td> AM 2
-                            </td>
-                          </tr>
-                        </tbody>
+                        </thead>
+                        <tbody></tbody>
                       </table>
                     </div>
                     <!-- /.box-body -->
@@ -203,6 +194,18 @@
                   </div>
                 </div>
                 <!-- /.tab-pane -->
+                <div class='text-center'>
+                <button id='btn_modal_rubro' type="button" class="btn btn-info">
+                  <i class='fa fa-plus-circle align-middle'></i>
+                  Cargar Rubros
+                </button>
+                <button id='btn_clear_tbl_iva' type="button" class="btn btn-danger">
+                  <i class='fa fa-trash align-middle'></i>
+                  Limpiar
+                </button>
+              </div>
+
+
               </div>
               <!-- /.tab-content -->
             </div>
@@ -309,5 +312,48 @@
     </div>
   </div>
 </body>
+
+
+
+<div class="modal fade" id="modal-default">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Ingreso de Rubros</h4>
+              </div>
+              <div class="modal-body">
+              <div class="box">
+                <div class="box-body no-padding">
+                  <table id='tbl_rubro' class="table table-condensed">
+                    <thead>
+                      <tr>
+                        <th>Rubro</th>
+                        <th>Monto</th>
+                        <th>Impuesto</th>
+                        <th>Total</th>
+                        <th style="width: 40px">&nbsp;</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      
+                  </tbody></table>
+                  <div class='pull-left'><button type="button" class="btn btn-success add_rubro"><i class="fa fa-plus "></i></button>
+                </div>
+                </div>
+                <!-- /.box-body -->
+              </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cerrar</button>
+                <button  id='save' type="button" class="btn btn-primary">Guardar</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+
 
 </html>
