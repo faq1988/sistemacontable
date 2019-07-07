@@ -1,8 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 require_once(APPPATH .'controllers/Main_controller.php');
-include '../afipsdk/src/Afip.php'; 
-
+require_once(APPPATH .'../afipsdk/src/Afip.php'); 
 class Afip_controller extends Main_Controller {
 
 	public function index()
